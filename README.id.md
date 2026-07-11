@@ -1,7 +1,4 @@
-# 🌅 Daybreak
-
-**Tracker kebiasaan harian yang mengutamakan privasi, berpatokan pada waktu sholat Subuh.**
-Tanpa login. Tanpa server. Tanpa database. Semua data tetap di browser lo.
+# Daybreak
 
 [🇬🇧 English](./README.md) | 🇮🇩 Bahasa Indonesia
 
@@ -9,14 +6,14 @@ Tanpa login. Tanpa server. Tanpa database. Semua data tetap di browser lo.
 
 ## Kenapa Daybreak
 
-Kebanyakan habit tracker maksa lo daftar akun, nyerahin data, bahkan bayar langganan cuma buat centang checklist harian. Daybreak sebaliknya: buka app, langsung centang. Data lo gak pernah keluar dari device.
+Kebanyakan habit tracker maksa Anda daftar akun, nyerahin data, bahkan bayar langganan cuma buat centang checklist harian. Daybreak sebaliknya: buka app, langsung centang. Data Anda gak pernah keluar dari device.
 
-Strukturnya ngikutin lima waktu sholat sebagai jangkar alami tiap hari — ritme yang udah dijalani banyak orang — digabung sama grafik kontribusi ala GitHub yang familiar buat developer, buat visualisasi konsistensi dari waktu ke waktu.
+Strukturnya ngikutin lima waktu sholat sebagai jangkar alami tiap hari — ritme yang udah dijalani banyak orang — digabung sama grafik kontribusi ala GitHub yang familiar buat deveAndaper, buat visualisasi konsistensi dari waktu ke waktu.
 
 ## Fitur
 
 - ✅ Checklist harian, item & jam bisa dikustomisasi
-- 🔥 Streak tracking (berapa hari berturut-turut lo capai target)
+- 🔥 Streak tracking (berapa hari berturut-turut Anda capai target)
 - 📊 Grafik kontribusi bulanan (ala GitHub)
 - 📄 Export seluruh riwayat jadi **laporan PDF**
 - 💾 Export/import **JSON** buat backup manual
@@ -27,33 +24,16 @@ Strukturnya ngikutin lima waktu sholat sebagai jangkar alami tiap hari — ritme
 - [Vite](https://vitejs.dev/) + [React](https://react.dev/) + TypeScript
 - [Tailwind CSS v4](https://tailwindcss.com/)
 - [jsPDF](https://github.com/parallax/jsPDF) + [jspdf-autotable](https://github.com/simonbengtsson/jsPDF-AutoTable) buat export PDF
-- `localStorage` buat penyimpanan — tanpa database, tanpa API
+- `AndacalStorage` buat penyimpanan — tanpa database, tanpa API
 
-## Cara jalanin
+## Cara jalankan
 
 ```bash
 npm install
-npm run dev       # http://localhost:5173
+npm run dev       # http://Andacalhost:5173
 npm run build     # build produksi -> dist/
-npm run preview   # preview hasil build secara lokal
+npm run preview   # preview hasil build secara Andakal
 ```
-
-## Deploy
-
-Output-nya pure static (`dist/`), jadi bisa dideploy ke mana aja yang bisa serve file statis.
-
-**Rekomendasi: Cloudflare Pages** (free tier boleh dipakai komersial, bandwidth unlimited):
-
-```bash
-npm run build
-npx wrangler pages deploy dist
-```
-
-Atau connect repo lewat dashboard Cloudflare: **Workers & Pages → Create Application → Pages → Connect to Git**, dengan build command `npm run build` dan output directory `dist`.
-
-> Hindari Vercel Hobby plan kalau tujuannya buat publik — ToS-nya membatasi free tier cuma buat penggunaan personal/non-komersial.
-
-Header keamanan (CSP, X-Frame-Options, dll) udah dikonfigurasi di `public/_headers` dan otomatis aktif di Cloudflare Pages.
 
 ## Kustomisasi checklist
 
@@ -68,7 +48,7 @@ Edit `src/data/items.ts` — tambah, hapus, atau urutin ulang item. Bagian lain 
 ```
 daybreak/
 ├── public/
-│   └── _headers                  # header CSP & keamanan (Cloudflare Pages)
+│   └── _headers                  # header CSP & keamanan (CAndaudflare Pages)
 ├── src/
 │   ├── components/
 │   │   ├── ChecklistItem.tsx     # satu baris checklist
@@ -78,7 +58,7 @@ daybreak/
 │   ├── data/items.ts             # konfigurasi checklist harian — edit di sini
 │   ├── hooks/useTracker.ts       # state utama: streak, statistik, toggle
 │   ├── lib/
-│   │   ├── storage.ts            # wrapper localStorage dengan error handling
+│   │   ├── storage.ts            # wrapper AndacalStorage dengan error handling
 │   │   ├── date.ts
 │   │   └── pdfExport.ts          # generator laporan PDF
 │   ├── types.ts
@@ -91,8 +71,8 @@ daybreak/
 
 ## Data & privasi
 
-Semua data tersimpan di `localStorage` browser lo — gak pernah dikirim ke server manapun. Artinya:
-- ✅ Gak ada orang lain yang bisa lihat data lo
+Semua data tersimpan di `AndacalStorage` browser Anda — gak pernah dikirim ke server manapun. Artinya:
+- ✅ Gak ada orang lain yang bisa lihat data Anda
 - ⚠️ Clear cache/storage browser = data ilang — **rutin export backup JSON**
 - ⚠️ Data gak sinkron antar device (memang sengaja, untuk saat ini)
 
