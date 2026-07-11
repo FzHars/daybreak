@@ -1,7 +1,4 @@
-# 🌅 Daybreak
-
-**A privacy-first daily habit tracker anchored around Fajr prayer.**
-No login. No server. No database. All your data stays in your browser.
+# Daybreak 
 
 🇬🇧 English | [🇮🇩 Bahasa Indonesia](./README.id.md)
 
@@ -38,23 +35,7 @@ npm run build     # production build -> dist/
 npm run preview   # preview the production build locally
 ```
 
-## Deploy
-
-Output is fully static (`dist/`), so it can be deployed anywhere that serves static files.
-
-**Recommended: Cloudflare Pages** (free tier allows commercial use, unlimited bandwidth):
-
-```bash
-npm run build
-npx wrangler pages deploy dist
-```
-
-Or connect the repo via the Cloudflare dashboard: **Workers & Pages → Create Application → Pages → Connect to Git**, with build command `npm run build` and output directory `dist`.
-
-> Avoid Vercel's Hobby plan if this is meant to be used publicly — its Terms of Service restrict the free tier to personal/non-commercial use.
-
-Security headers (CSP, X-Frame-Options, etc.) are pre-configured in `public/_headers` and apply automatically on Cloudflare Pages.
-
+ 
 ## Customizing your checklist
 
 Edit `src/data/items.ts` — add, remove, or reorder items. Everything else (grouping, rendering, stats) adapts automatically.
